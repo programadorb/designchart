@@ -9,23 +9,19 @@
         <script src="raphael-min.js"></script>
         <script src="jquery.min.js"></script>
         <script src="designchart.js"></script>
-        <!-- <script src="../release/flowchart.min.js"></script> -->
         <script>
-
             window.onload = function () {
-                var btn = document.getElementById("run"),
-                    cd = document.getElementById("code"),
-                    chart;
+                var chart;
 
-                (btn.onclick = function () {
-                    var code = cd.value;
+                (function () {
+                    var code = 'st=>start: Start|past:>http://www.google.com[blank]\ne=>end: End:>http://www.google.com\nop1=>operation: My Operation|past\nop2=>operation: Stuff|current\nsub1=>subroutine: My Subroutine|invalid\ncond=>condition: Yes\nor No?|approved:>http://www.google.com\nc2=>condition: Good idea|rejected\nio=>inputoutput: catch something...|request\npara=>parallel: parallel tasks\nst->op1(right)->cond\ncond(yes, right)->c2\ncond(no)->para\nc2(true)->io->e\nc2(false)->e\npara(path1, bottom)->sub1(left)->op1\npara(path2, right)->op2->e\nst@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})';
 
                     if (chart) {
                       chart.clean();
                     }
 
                     chart = flowchart.parse(code);
-                    chart.drawSVG('canvas', {
+                    chart.drawSVG('canvasFlow', {
                       // 'x': 30,
                       // 'y': 50,
                       'line-width': 3,
@@ -74,29 +70,6 @@
         </script>
     </head>
     <body>
-        <div><textarea id="code" style="width: 100%;" rows="11">
-st=>start: Start|past:>http://www.google.com[blank]
-e=>end: End:>http://www.google.com
-op1=>operation: My Operation|past
-op2=>operation: Stuff|current
-sub1=>subroutine: My Subroutine|invalid
-cond=>condition: Yes
-or No?|approved:>http://www.google.com
-c2=>condition: Good idea|rejected
-io=>inputoutput: catch something...|request
-para=>parallel: parallel tasks
-
-st->op1(right)->cond
-cond(yes, right)->c2
-cond(no)->para
-c2(true)->io->e
-c2(false)->e
-
-para(path1, bottom)->sub1(left)->op1
-para(path2, right)->op2->e
-
-st@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})</textarea></div>
-        <div><button id="run" type="button">Run</button></div>
-        <div id="canvas"></div>
+        <div id="canvasFlow"></div>
     </body>
 </html>
