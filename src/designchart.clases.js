@@ -1,12 +1,38 @@
-function FlowChart(id){
-
+function BarChart(id, title, labels, datasets){
+    var barChartData = {
+        labels: labels,
+        datasets: datasets
+    };
+    window.addEventListener("load", function(){
+        var ctx = document.getElementById(id).getContext('2d');
+        window.myBar = new Chart(ctx, {
+            type: 'bar',
+            data: barChartData,
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: title
+                }
+            }
+        });
+    });
 }
 
-function PieChart(id, labels, datasets){
+function PieChart(id, title, labels, datasets){
     var config = {
         type: 'pie',
         data: {datasets: datasets,labels: labels},
-        options: {responsive: true}
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: title
+            }
+        }
     };
 
     window.addEventListener("load", function(){
@@ -52,7 +78,7 @@ function ProccessChart(id, code){
     });       
 }
 
-function flowChart(id, code){
+function FlowChart(id, code){
     window.addEventListener("load", function(){
         var chart = flowchart.parse(code);
         chart.drawSVG(id, {

@@ -5,13 +5,6 @@
 	<title>Bar Chart</title>
 	<script src="designchart.js"></script>
 	<script src="utils.js"></script>
-	<style>
-	canvas {
-		-moz-user-select: none;
-		-webkit-user-select: none;
-		-ms-user-select: none;
-	}
-	</style>
 </head>
 
 <body>
@@ -19,24 +12,10 @@
 		<canvas id="canvas"></canvas>
 	</div>
 	<script>
-		var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 		var color = Chart.helpers.color;
 		var barChartData = {
 			labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-			datasets: [{
-				label: 'Dataset 1',
-				backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-				borderColor: window.chartColors.red,
-				borderWidth: 1,
-				data: [5,5,5,5,5,5,5]
-			}, {
-				label: 'Dataset 2',
-				backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
-				borderColor: window.chartColors.blue,
-				borderWidth: 1,
-				data: [5,5,5,5,5,5,5]
-			}]
-
+			datasets: [{label: 'Dataset 1',backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),borderColor: window.chartColors.red,borderWidth: 1,data: [5,5,5,5,5,5,5]}]
 		};
 
 		window.onload = function() {
@@ -57,8 +36,6 @@
 			});
 
 		};
-
-		
 	</script>
 </body>
 
