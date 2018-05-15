@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Pie Chart</title>
+    <script src="../raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../src/designchart.js"></script>
+    <script src="../src/designchart.clases.js"></script>
+	<script src="../src/utils.js"></script>
+</head>
+
+<body>
+	<div id="canvas-holder" style="width:40%">
+		<canvas id="chart-area"></canvas>
+    </div>
+    <div id="canvasProcess"></div>
+	<script>
+        new PieChart("chart-area",['Red','Orange','Yellow','Green','Blue'],[{data: [1,2,3,4,5,],backgroundColor: [window.chartColors.red,window.chartColors.orange,window.chartColors.yellow,window.chartColors.green,window.chartColors.blue,],label: 'Dataset 1'}]);
+        new ProccessChart("canvasProcess", 'st=>start: Start|past:>http://www.google.com[blank]\ne=>end: End:>http://www.google.com\nop1=>operation: My Operation|past\nop2=>operation: Stuff|current\nsub1=>subroutine: My Subroutine|invalid\ncond=>condition: Yes\nor No?|approved:>http://www.google.com\nc2=>condition: Good idea|rejected\nio=>inputoutput: catch something...|request\npara=>parallel: parallel tasks\nst->op1(right)->cond\ncond(yes, right)->c2\ncond(no)->para\nc2(true)->io->e\nc2(false)->e\npara(path1, bottom)->sub1(left)->op1\npara(path2, right)->op2->e\nst@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})');
+    </script>
+</body>
+
+</html>
