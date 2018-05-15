@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta charset="utf-8"/>
     <title>Pie Chart</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -11,19 +12,23 @@
 </head>
 
 <body>
+    <h1>Gráfica de pastel</h1>
     <canvas id="chart-area"></canvas>
     <hr/>
+    <h1>Gráfica de barras</h1>
     <canvas id="chart-bar"></canvas>
     <hr/>
+    <h1>Gráfica de procesos</h1>
     <div id="canvasProcess"></div>
     <hr/>
+    <h1>Gráfica de flujo</h1>
     <div id="canvasFlow"></div>
     <hr/>
 	<script>
-        new PieChart("chart-area","Grafica de pastel",['Red','Orange','Yellow','Green','Blue'],[{data: [1,2,3,4,5,],backgroundColor: [window.chartColors.red,window.chartColors.orange,window.chartColors.yellow,window.chartColors.green,window.chartColors.blue,],label: 'Dataset 1'}]);
-        new BarChart("chart-bar","Grafica de barras",['January', 'February', 'March', 'April', 'May', 'June', 'July'],[{label: 'Dataset 1',backgroundColor: window.chartColors.red,borderColor: window.chartColors.red,borderWidth: 1,data: [5,5,5,5,5,5,5]}]);
-        new ProccessChart("canvasProcess", 'st=>start: Start|past:>http://www.google.com[blank]\ne=>end: End:>http://www.google.com\nop1=>operation: My Operation|past\nop2=>operation: Stuff|current\nsub1=>subroutine: My Subroutine|invalid\ncond=>condition: Yes\nor No?|approved:>http://www.google.com\nc2=>condition: Good idea|rejected\nio=>inputoutput: catch something...|request\npara=>parallel: parallel tasks\nst->op1(right)->cond\ncond(yes, right)->c2\ncond(no)->para\nc2(true)->io->e\nc2(false)->e\npara(path1, bottom)->sub1(left)->op1\npara(path2, right)->op2->e\nst@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})');
-        new FlowChart("canvasFlow", 'st=>start: Start|past:>http://www.google.com[blank]\ne=>end: End:>http://www.google.com\nop1=>operation: My Operation|past\nop2=>operation: Stuff|current\nsub1=>subroutine: My Subroutine|invalid\ncond=>condition: Yes\nor No?|approved:>http://www.google.com\nc2=>condition: Good idea|rejected\nio=>inputoutput: catch something...|request\npara=>parallel: parallel tasks\nst->op1(right)->cond\ncond(yes, right)->c2\ncond(no)->para\nc2(true)->io->e\nc2(false)->e\npara(path1, bottom)->sub1(left)->op1\npara(path2, right)->op2->e\nst@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})');
+        new PieChart("chart-area","Grafica de pastel",['Rojo','Naranja','Amarilo','Verde','Azul'],[{data: [1,2,3,4,5,],backgroundColor: [window.chartColors.red,window.chartColors.orange,window.chartColors.yellow,window.chartColors.green,window.chartColors.blue,],label: 'Dataset 1'}]);
+        new BarChart("chart-bar","Grafica de barras",['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'],[{label: 'Datos 1',backgroundColor: window.chartColors.red,borderColor: window.chartColors.red,borderWidth: 1,data: [1,2,3,4,5,6,7]}]);
+        new ProccessChart("canvasProcess", 'st=>start: Inicio\ne=>end: Final:\nop1=>operation: Operacion|past\nop2=>operation: Material|current\nsub1=>subroutine: Subrutina|invalid\ncond=>condition: Si\nor No?|approved:\nc2=>condition: Buena idea|rejected\nio=>inputoutput: Atrapar algo...|request\npara=>parallel: Tarea paralela\nst->op1(right)->cond\ncond(yes, right)->c2\ncond(no)->para\nc2(true)->io->e\nc2(false)->e\npara(path1, bottom)');
+        new FlowChart("canvasFlow", 'st=>start: Inicio\ne=>end: Final:\nop1=>operation: Operacion|past\nop2=>operation: Material|current\nsub1=>subroutine: Subrutina|invalid\ncond=>condition: Si\nor No?|approved:\nc2=>condition: Buena idea|rejected\nio=>inputoutput: Atrapar algo...|request\npara=>parallel: Tarea paralela\nst->op1(right)->cond\ncond(yes, right)->c2\ncond(no)->para\nc2(true)->io->e\nc2(false)->e\npara(path1, bottom)->sub1(left)->op1\npara(path2, right)->op2->e\nst@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})');
     </script>
 </body>
 
