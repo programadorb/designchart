@@ -20,6 +20,7 @@ Las gráficas que contiene son:
 ## Demo
 En la carpeta demo se encuentra un archivo con el nombre index.html
 que contiene los 4 Gráficos que permite esta libreria.
+Adicionalmente se tiene un archivo data.json con la información de los gráficos.
 
 ## License
 Chart.js is available under the MIT license.
