@@ -1,0 +1,18 @@
+var data={
+   "pie":{
+    "title":"Gráfica de pastel",
+    "labels":["Rojo","Naranja","Amarilo","Verde","Azul"],
+    "dataset":[{"data": [1,2,3,4,5],"backgroundColor": ["rgb(255, 99, 132)","rgb(255, 159, 64)","rgb(255, 205, 86)","rgb(75, 192, 192)","rgb(54, 162, 235)",],"label": "Dataset 1"}]
+    },
+   "bar":{
+    "title":"Gráfica de barras",
+    "labels":["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"],
+    "dataset":[{"label": "Datos 1","backgroundColor": "rgb(255, 99, 132)","borderColor": "rgb(255, 99, 132)","borderWidth": 1,"data": [1,2,3,4,5,6,7]}]
+    },
+   "process":{
+        "description":"st=>start: Inicio\ne=>end: Final:\nop1=>operation: Operacion|past\nop2=>operation: Material|current\nsub1=>subroutine: Subrutina|invalid\ncond=>condition: Si\nor No?|approved:\nc2=>condition: Buena idea|rejected\nio=>inputoutput: Atrapar algo...|request\npara=>parallel: Tarea paralela\nst->op1(right)->cond\ncond(yes, right)->c2\ncond(no)->para\nc2(true)->io->e\nc2(false)->e\npara(path1, bottom)"
+    },
+   "flow":{
+        "description":"st=>start: Inicio\ne=>end: Final:\nop1=>operation: Operacion|past\nop2=>operation: Material|current\nsub1=>subroutine: Subrutina|invalid\ncond=>condition: Si\nor No?|approved:\nc2=>condition: Buena idea|rejected\nio=>inputoutput: Atrapar algo...|request\npara=>parallel: Tarea paralela\nst->op1(right)->cond\ncond(yes, right)->c2\ncond(no)->para\nc2(true)->io->e\nc2(false)->e\npara(path1, bottom)->sub1(left)->op1\npara(path2, right)->op2->e\nst@>op1({\"stroke\":\"Red\"})@>cond({\"stroke\":\"Red\",\"stroke-width\":6,\"arrow-end\":\"classic-wide-long\"})@>c2({\"stroke\":\"Red\"})@>op2({\"stroke\":\"Red\"})@>e({\"stroke\":\"Red\"})"
+    }
+}

@@ -6,6 +6,7 @@
     <title>Pie Chart</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="data.json"></script>
     <script src="../src/designchart.js"></script>
     <script src="../src/designchart.clases.js"></script>
 	<script src="../src/utils.js"></script>
@@ -25,10 +26,10 @@
     <div id="canvasFlow"></div>
     <hr/>
 	<script>
-        new PieChart("chart-area","Grafica de pastel",['Rojo','Naranja','Amarilo','Verde','Azul'],[{data: [1,2,3,4,5,],backgroundColor: [window.chartColors.red,window.chartColors.orange,window.chartColors.yellow,window.chartColors.green,window.chartColors.blue,],label: 'Dataset 1'}]);
-        new BarChart("chart-bar","Grafica de barras",['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'],[{label: 'Datos 1',backgroundColor: window.chartColors.red,borderColor: window.chartColors.red,borderWidth: 1,data: [1,2,3,4,5,6,7]}]);
-        new ProccessChart("canvasProcess", 'st=>start: Inicio\ne=>end: Final:\nop1=>operation: Operacion|past\nop2=>operation: Material|current\nsub1=>subroutine: Subrutina|invalid\ncond=>condition: Si\nor No?|approved:\nc2=>condition: Buena idea|rejected\nio=>inputoutput: Atrapar algo...|request\npara=>parallel: Tarea paralela\nst->op1(right)->cond\ncond(yes, right)->c2\ncond(no)->para\nc2(true)->io->e\nc2(false)->e\npara(path1, bottom)');
-        new FlowChart("canvasFlow", 'st=>start: Inicio\ne=>end: Final:\nop1=>operation: Operacion|past\nop2=>operation: Material|current\nsub1=>subroutine: Subrutina|invalid\ncond=>condition: Si\nor No?|approved:\nc2=>condition: Buena idea|rejected\nio=>inputoutput: Atrapar algo...|request\npara=>parallel: Tarea paralela\nst->op1(right)->cond\ncond(yes, right)->c2\ncond(no)->para\nc2(true)->io->e\nc2(false)->e\npara(path1, bottom)->sub1(left)->op1\npara(path2, right)->op2->e\nst@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})');
+        new PieChart('chart-area',data.pie.title,data.pie.labels,data.pie.dataset);
+        new BarChart('chart-bar',data.bar.title,data.bar.labels,data.bar.dataset);
+        new ProcessChart("canvasProcess", data.process.description);
+        new FlowChart("canvasFlow", data.flow.description);
     </script>
 </body>
 

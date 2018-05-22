@@ -41,7 +41,7 @@ function PieChart(id, title, labels, datasets){
     });    
 }
 
-function ProccessChart(id, code){
+function ProcessChart(id, code){
     window.addEventListener("load", function(){
         var chart = flowchart.parse(code);
         chart.drawSVG(id, {
