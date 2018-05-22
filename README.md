@@ -23,4 +23,4 @@ que contiene los 4 Gráficos que permite esta libreria.
 Adicionalmente se tiene un archivo data.json con la información de los gráficos.
 
 ## License
-Chart.js is available under the MIT license.
+DesignChart.js is available under the MIT license.
